@@ -24,6 +24,15 @@ export default {
     return {
       appNavDrawerIsVisible: false
     }
+  },
+  mounted () {
+    this.$eventBus.$on('toggle-app-nav-drawer', value => {
+      if (typeof value === 'undefined') {
+        this.appNavDrawerIsVisible = !this.appNavDrawerIsVisible
+      } else {
+        this.appNavDrawerIsVisible = value
+      }
+    })
   }
 }
 </script>
