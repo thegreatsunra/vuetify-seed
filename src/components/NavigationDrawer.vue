@@ -34,15 +34,12 @@ export default {
       drawerIsVisible: null
     }
   },
-  mounted () {
-    this.$eventBus.$on('toggle-navigation-drawer', () => {
-      this.drawerIsVisible = !this.drawerIsVisible
-      console.log('drawer toggled')
-    })
-  },
   watch: {
     isVisible (value) {
       this.drawerIsVisible = value
+    },
+    drawerIsVisible (value) {
+      this.$eventBus.$emit('toggle-navigation-drawer', value)
     }
   }
 }

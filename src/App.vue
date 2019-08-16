@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <app-bar />
-    <navigation-drawer :is-visible="appNavDrawerIsVisible" />
+    <navigation-drawer :is-visible="navigationDrawerIsVisible" />
     <v-content>
       <router-view />
     </v-content>
@@ -20,15 +20,15 @@ export default {
   },
   data () {
     return {
-      appNavDrawerIsVisible: false
+      navigationDrawerIsVisible: false
     }
   },
   mounted () {
-    this.$eventBus.$on('toggle-app-nav-drawer', value => {
+    this.$eventBus.$on('toggle-navigation-drawer', value => {
       if (typeof value === 'undefined') {
-        this.appNavDrawerIsVisible = !this.appNavDrawerIsVisible
+        this.navigationDrawerIsVisible = !this.navigationDrawerIsVisible
       } else {
-        this.appNavDrawerIsVisible = value
+        this.navigationDrawerIsVisible = value
       }
     })
   }
