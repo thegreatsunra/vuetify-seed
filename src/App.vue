@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <app-toolbar />
     <app-nav-drawer :is-visible="appNavDrawerIsVisible" />
+    <app-bar />
     <v-content>
       <hello-world />
     </v-content>
@@ -10,15 +10,15 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld'
-import AppToolbar from '@/components/AppToolbar'
 import AppNavDrawer from '@/components/AppNavDrawer'
+import AppBar from '@/components/AppBar'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    AppToolbar,
     AppNavDrawer
+    AppBar,
   },
   data () {
     return {
