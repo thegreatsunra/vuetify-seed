@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <app-nav-drawer :is-visible="appNavDrawerIsVisible" />
     <app-bar />
+    <navigation-drawer :is-visible="appNavDrawerIsVisible" />
     <v-content>
       <router-view />
     </v-content>
@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import AppNavDrawer from '@/components/AppNavDrawer'
 import AppBar from '@/components/AppBar'
+import NavigationDrawer from '@/components/NavigationDrawer'
 
 export default {
   name: 'App',
   components: {
-    AppNavDrawer
     AppBar,
+    NavigationDrawer
   },
   data () {
     return {
