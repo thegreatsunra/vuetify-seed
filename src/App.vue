@@ -3,20 +3,18 @@
     <app-nav-drawer :is-visible="appNavDrawerIsVisible" />
     <app-bar />
     <v-content>
-      <hello-world />
+      <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld'
 import AppNavDrawer from '@/components/AppNavDrawer'
 import AppBar from '@/components/AppBar'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     AppNavDrawer
     AppBar,
   },
